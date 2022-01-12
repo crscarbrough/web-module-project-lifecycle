@@ -3,6 +3,35 @@ import User from "./components/User";
 import FollowerList from "./components/FollowerList";
 
 class App extends React.Component {
+  state = {
+    currentUser: "",
+    user: {
+      avatar_url: "https://avatars.githubusercontent.com/u/87742885?v=4",
+      html_url: "https://github.com/crscarbrough",
+      name: "Claudia Scarbrough",
+      login: "crscarbrough",
+      public_repos: 33,
+      followers: 6,
+    },
+    followers: [
+      {
+        login: "brandynwilliams",
+        avatar_url: "https://avatars.githubusercontent.com/u/66536877?v=4",
+        html_url: "https://github.com/brandynwilliams",
+      },
+      {
+        login: "brandynwilliams",
+        avatar_url: "https://avatars.githubusercontent.com/u/66536877?v=4",
+        html_url: "https://github.com/brandynwilliams",
+      },
+      {
+        login: "brandynwilliams",
+        avatar_url: "https://avatars.githubusercontent.com/u/66536877?v=4",
+        html_url: "https://github.com/brandynwilliams",
+      },
+    ],
+  };
+
   render() {
     return (
       <div>
@@ -12,8 +41,8 @@ class App extends React.Component {
           <button>Search</button>
         </form>
 
-        <User />
-        <FollowerList />
+        <User user={this.state.user} />
+        <FollowerList followers={this.state.followers} />
       </div>
     );
   }

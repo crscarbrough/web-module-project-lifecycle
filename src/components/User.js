@@ -2,15 +2,16 @@ import React from "react";
 
 class User extends React.Component {
   render() {
+    const { user } = this.props;
     return (
       <div id="userCard">
-        <img src="https://avatars.githubusercontent.com/u/87742885?v=4" />
-        <a target="_blank" href="https://github.com/crscarbrough">
-          <h3> Claudia Scarbrough</h3>
+        <img src={user.avatar_url} />
+        <a target="_blank" href={user.html_url}>
+          <h3> {user.name} </h3>
         </a>
-        <p>crscarbrough</p>
-        <p>Total Repos: 33</p>
-        <p>Total Followers: 6</p>
+        <p>({user.login})</p>
+        <p>Total Repos: {user.public_repos} </p>
+        <p>Total Followers: {user.followers} </p>
       </div>
     );
   }
