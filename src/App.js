@@ -3,6 +3,7 @@ import User from "./components/User";
 import FollowerList from "./components/FollowerList";
 import Axios from "axios";
 import axios from "axios";
+import "./App.css";
 
 class App extends React.Component {
   state = {
